@@ -1,0 +1,16 @@
+.container-fluid {
+    background-color: black;
+    color: azure;
+}
+
+.nav-link{
+    color: #999
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.image{
+    cursor: pointer;
+}
