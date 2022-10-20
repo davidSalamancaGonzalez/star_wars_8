@@ -1,5 +1,5 @@
 
-<div class="container"
+<div class="container text-center mt-5 back"
 *ngIf="!ships; else information">
       
 <div class="spinner-grow text-light" role="status">
@@ -13,7 +13,9 @@
     <div class="row mt-4 text-muted">
         
         <div class="row col-md image m-3 p-3">
-            <img class="img-fluid" [src] ="imageUrl | imagenes: ships.id" >
+            <img class="img-fluid" 
+            [src]   = "imageUrl | imagenes: ships.id" 
+            onerror = "this.src='./assets/baby_yoda.gif'">
         </div>
 
         <div class=" row col-md textDiv m-3">
@@ -23,8 +25,12 @@
             <div class="row"> Passengers: {{ ships.passengers }} </div>
             <div class="row"> Starship Class: {{ ships.starship_class }} </div>
             <div class="row">  </div>
+            <button type="button" 
+                    class="mt-3 btn small btn-outline-dark btn-sm"
+                    routerLink="./listado">Volver</button>
         </div>
     </div>   
-
+<div>
+</div>
 </div>
 </ng-template>

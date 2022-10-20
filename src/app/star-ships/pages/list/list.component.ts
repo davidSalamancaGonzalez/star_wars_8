@@ -9,25 +9,26 @@ import { ShipsService } from '../../services/ships.service';
 })
 export class ListComponent implements OnInit {
 
+page = 1;
 ships: Ships[] = [];
 
   constructor( private shipsService: ShipsService) { }
 
   ngOnInit(): void {
-
-    this.shipsService.getShips()
-    .subscribe( data => { 
-      
+  
+    this.shipsService
+    .getShips(this.page)
+    .subscribe( data => {  
       this.ships = data.results;
-
-      this.ships.map( ship => {
-        let reg = /['0-9']/ig;
-        let result = ship.url.slice(ship.url.length - 4, ship.url.length -1).match(reg)?.join('')
-        ship.id  = result;
-      })
-     })
-    
+      this.ships = this.shipsService.setId(data)})  
   }
 
-
+  next(){
+    this.shipsService
+    .getShips( this.page+=1 ) 
+    .subscribe( data => {
+      this.ships =  this.shipsService.setId(data)
+      this.ships.push(...data.results)})
+  }
+  
 }

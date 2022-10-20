@@ -6,6 +6,7 @@ import { ListComponent } from './pages/list/list.component';
 import { ShipsComponent } from './pages/ships/ships.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImagenesPipe } from './pipes/imagenes.pipe';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
@@ -20,7 +21,8 @@ import { ImagenesPipe } from './pipes/imagenes.pipe';
   ],
   imports: [
     CommonModule,
-    StarRoutingModule
+    StarRoutingModule,
+    InfiniteScrollModule
   ]
 })
 export class StarModule { }

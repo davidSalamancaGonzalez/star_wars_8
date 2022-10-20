@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap, tap } from 'rxjs';
+import { switchMap } from 'rxjs';
 import { Ships } from '../../interfaces/ships.interface';
 import { ShipsService } from '../../services/ships.service';
 
@@ -25,7 +25,8 @@ imageUrl: string = "https://starwars-visualguide.com/assets/img/starships/"
       .subscribe( ships => {
         this.ships = ships;
         let reg = /['0-9']/ig
-        this.ships.id =  ships.url.slice(ships.url.length - 4, ships.url.length -1).match(reg)?.join('')}) 
+        this.ships.id =  ships.url.slice(ships.url.length - 4, ships.url.length -1).match(reg)?.join('')
+      }) 
     
 
         

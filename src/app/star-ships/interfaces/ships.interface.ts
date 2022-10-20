@@ -25,6 +25,6 @@ export interface StarShips {
     starship_class:         string;
     url:                    string;
     alt_img?:               string;
-    id?:                    string | null;
+    id?:                    string | string | null;
    }
    
