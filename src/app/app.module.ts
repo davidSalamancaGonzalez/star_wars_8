@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './shared/main-page/main-page.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
+   
    
   ],
   imports: [

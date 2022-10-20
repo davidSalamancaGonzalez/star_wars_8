@@ -1,0 +1,30 @@
+
+<div class="container"
+*ngIf="!ships; else information">
+      
+<div class="spinner-grow text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+</div>
+
+<ng-template #information>
+<div class="container">
+    <div class="row mt-4 text-muted">
+        
+        <div class="row col-md image m-3 p-3">
+            <img class="img-fluid" [src] ="imageUrl | imagenes: ships.id" >
+        </div>
+
+        <div class=" row col-md textDiv m-3">
+            <div class="row"> Name: {{ ships.name }} </div>
+            <div class="row"> Model: {{ ships.model }} </div>
+            <div class="row"> Manufacturer: {{ ships.manufacturer }} </div>
+            <div class="row"> Passengers: {{ ships.passengers }} </div>
+            <div class="row"> Starship Class: {{ ships.starship_class }} </div>
+            <div class="row">  </div>
+        </div>
+    </div>   
+
+</div>
+</ng-template>

@@ -4,7 +4,8 @@
     <div class="container shipCard" >
         
         <div class="card text-bg-dark mb-4" 
-        *ngFor="let item of ships" >
+        *ngFor="let item of ships" 
+       [routerLink]="['/ships', item.id ]">
         
         <div class="card-body">
             <h5 class="card-title"> {{item.name}} </h5>

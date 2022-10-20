@@ -16,7 +16,18 @@ ships: Ships[] = [];
   ngOnInit(): void {
 
     this.shipsService.getShips()
-    .subscribe( data => { this.ships = data.results })
+    .subscribe( data => { 
+      
+      this.ships = data.results;
+
+      this.ships.map( ship => {
+        let reg = /['0-9']/ig;
+        let result = ship.url.slice(ship.url.length - 4, ship.url.length -1).match(reg)?.join('')
+        ship.id  = result;
+      })
+     })
+    
   }
+
 
 }
