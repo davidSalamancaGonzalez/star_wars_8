@@ -9,7 +9,10 @@ import { ShipsService } from '../../services/ships.service';
 })
 export class ListComponent implements OnInit {
 
+throttle = 1;
+distance = 2;
 page = 1;
+
 ships: Ships[] = [];
 
   constructor( private shipsService: ShipsService) { }
@@ -19,16 +22,19 @@ ships: Ships[] = [];
     this.shipsService
     .getShips(this.page)
     .subscribe( data => {  
-      this.ships = data.results;
       this.ships = this.shipsService.setId(data)})  
+    
   }
 
-  next(){
-    this.shipsService
-    .getShips( this.page+=1 ) 
+  // Infinite scroll  
+
+onScroll():void{
+  this.shipsService
+    .getShips(this.page+=1)
     .subscribe( data => {
-      this.ships =  this.shipsService.setId(data)
-      this.ships.push(...data.results)})
-  }
-  
+      this.ships.push(...this.shipsService.setId(data));   
+    })
+}
+
+
 }

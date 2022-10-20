@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './shared/main-page/main-page.component';
 
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
-import { UrlPipe } from './star-ships/pipes/url.pipe'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    UrlPipe,
+   
    
    
   ],
