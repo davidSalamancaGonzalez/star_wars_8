@@ -1,7 +1,37 @@
-.image {
-    border-right: 2px solid rgba(255, 0, 0, 0.398);
+.redLine {
+    border: 1px solid #9e4f60;
 }
 
 .back{
     background-color: black;
 }
+
+.general {
+    background-color: #282727;
+    border-top-left-radius: 3% 3%;
+    border-top-right-radius: 3% 3%;
+}
+
+.imagen {
+    border-top-left-radius: 3% 3%;
+    border-top-right-radius: 3% 3%;
+    
+}
+
+.textBox{
+    color: #aaa;
+    background-color: #282727;
+    border-bottom-left-radius:  3% 3%;
+    border-bottom-right-radius: 3% 3%;
+   
+}
+
+.linkTarget{
+    color:  #9e4f60;
+    text-decoration: none;
+}
+
+.linkTarget:hover {
+    color: #ba6b7c;
+}
+

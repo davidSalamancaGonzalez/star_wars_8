@@ -7,6 +7,8 @@ import { ShipsComponent } from './pages/ships/ships.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImagenesPipe } from './pipes/imagenes.pipe';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { LayoutModule } from '@angular/cdk/layout';
+import { FooterComponent } from './pages/home/footer/footer.component';
 
 
 
@@ -17,12 +19,17 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     ShipsComponent,
     HomeComponent,
     ImagenesPipe,
+    FooterComponent,
    
+    
+    
   ],
   imports: [
     CommonModule,
     StarRoutingModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    LayoutModule,
+    
   ]
 })
 export class StarModule { }

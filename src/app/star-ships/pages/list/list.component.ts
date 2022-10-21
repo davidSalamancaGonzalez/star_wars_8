@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ships, StarShips } from '../../interfaces/ships.interface';
+import { Ships } from '../../interfaces/ships.interface';
 import { ShipsService } from '../../services/ships.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ShipsService } from '../../services/ships.service';
 })
 export class ListComponent implements OnInit {
 
-throttle = 1;
+throttle = 150;
 distance = 2;
 page = 1;
 

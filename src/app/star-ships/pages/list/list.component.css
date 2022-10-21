@@ -1,4 +1,13 @@
 .back{
-    background-color: black;
+    background-color:#121212;
     overflow-y: scroll;
+}
+
+.shipCard{
+    cursor: pointer;
+}
+
+.redLine {
+    border: 1px solid #9e4f60;
+    width: 50%;
 }

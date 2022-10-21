@@ -1,0 +1,18 @@
+<div class="container-fluid text-center p-3 mt-5 image justify-content-center">
+    <p class="title mb-4">FOLLOW STAR WARS: </p>
+    <div class="row justify-content-center">
+        <div  class="col-1" *ngFor="let logo of logos" >  
+        <a [href]="logo.link" 
+           target="_blank">
+        <img [src]="logo.source" style="width: 1.3rem;"> </a>      
+        </div>
+
+    </div>
+
+    <p class="mt-4">TM & © Lucasfilm Ltd. All Rights Reserved</p>
+    <p>Terms of Use</p>
+    <p>Additional Content Information</p>
+    <p>Privacy Policy</p>
+    <p>Children’s Online Privacy Policy</p>
+    
+</div>

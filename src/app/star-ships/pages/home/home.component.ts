@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../../services/header.service';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  
+  showContainer:boolean = true;
+  
+  constructor( private headerService:HeaderService,
+               public breakpointObserver: BreakpointObserver) { }
+  
+  logos: any;
+  
 
   ngOnInit(): void {
+    this.logos = this.headerService.logos;
+   
+    const isSmallScreen = this.breakpointObserver.observe([
+      '(min-width: 960px)'
+    ])
+    
+    isSmallScreen.subscribe(result => {
+      this.update(result)
+    })
+ 
+  }
+  
+  update(result:any){
+    this.showContainer = result.matches;
+  }
+  
   }
 
-}

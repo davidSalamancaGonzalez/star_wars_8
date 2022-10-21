@@ -10,10 +10,12 @@ import { MainPageComponent } from './shared/main-page/main-page.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
+    
    
    
    

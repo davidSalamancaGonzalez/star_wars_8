@@ -1,33 +1,21 @@
-<div class="back"
-infinite-scroll
-    [infiniteScrollDistance]="distance"
-    [infiniteScrollThrottle]="throttle"
-    
-    (scrolled)="onScroll()"
-    >
+<div class="back" 
+     infinite-scroll 
+     [infiniteScrollDistance]="distance" 
+     [infiniteScrollThrottle]="throttle"
+     (scrolled)="onScroll()">
 
-    
-    <div class="container shipCard mb-5">
-        
-        <div class="card text-bg-dark mb-4" 
-        *ngFor="let item of ships" 
-       [routerLink]="['/ships', item.id ]">
-        
-        <div class="card-body">
-            <h5 class="card-title"> {{item.name}} </h5>
-            <p class="card-text"> {{item.model}} </p>
-        </div>
-        </div>
-        
-    </div>    
+
+  <div class="container shipCard mb-5">
+
+    <div class="card text-bg-dark mb-4" 
+         *ngFor="let item of ships" 
+         [routerLink]="['/ships', item.id ]">
+
+      <div class="card-body">
+        <h5 class="card-title"> {{item.name}} </h5>
+        <p class="card-text"> {{item.model}} </p>
+      </div>
+    </div>
+
+  </div>
 </div>
-
-
-
-<!-- <div class="p-3 text-center"> 
-    <button 
-    type="button" 
-    class="my-3 btn small btn-outline-dark btn-sm"
-    (click)="next()"
-    >View more</button>
-</div> -->

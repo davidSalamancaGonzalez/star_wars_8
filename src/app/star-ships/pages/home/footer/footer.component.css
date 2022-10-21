@@ -1,0 +1,18 @@
+.image {
+  background-color: rgba(0, 0, 0, 0.399);
+  background-image: url('/assets/vader.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  max-height: 50%;
+  font-family: DIN, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #cccccc;
+  font-size: 0.875rem;
+  line-height: normal
+}
+
+.title{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+}
+

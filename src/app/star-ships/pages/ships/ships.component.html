@@ -1,36 +1,75 @@
+<div class="container text-center mt-5 back" *ngIf="!ships; else information">
 
-<div class="container text-center mt-5 back"
-*ngIf="!ships; else information">
-      
-<div class="spinner-grow text-light" role="status">
+  <div class="spinner-grow text-light" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
 
 </div>
 
 <ng-template #information>
-<div class="container">
-    <div class="row mt-4 text-muted">
+
+  <div class="d-flex justify-content-center ">
+
+  <div class="card mx-3 general" >
+
+    <div class="row g-0">
+
+      <div class="col-md-5">
+
+        <img class="img-fluid imagen" [src]="imageUrl | imagenes: ships.id"
+          onerror="this.src='./assets/babyyoda.gif'">
+
+        <div class="col col-sm-12 redLine"></div>
+
+      </div>
+
+      <div class="col-md-7">
+
+        <div class="card-body textBox">
+
+          <h5 class="card-title">{{ ships.name }}</h5>
+          <p class="card-text"> Model: {{ ships.model }}</p>
+          <p class="card-text"> Manufacturer: {{ ships.manufacturer }}</p>
+          <p class="card-text"> Passengers: {{ ships.passengers }}</p>
+          <p class="card-text"> Starship Class: {{ ships.starship_class }}</p>
+
+          <a class="linkTarget  mt-1 pe-2 row justify-content-end" routerLink="./ships/listado">Volver</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="container-fluid col-11">
+
+    <div class="row text-muted justify-content-center p-2 ">
         
-        <div class="row col-md image m-3 p-3">
-            <img class="img-fluid" 
+        <div class="row imagen">
+            <img class="img-fluid text-center imagen" 
             [src]   = "imageUrl | imagenes: ships.id" 
-            onerror = "this.src='./assets/baby_yoda.gif'">
+            onerror = "this.src='./assets/babyyoda.gif'">
         </div>
 
-        <div class=" row col-md textDiv m-3">
-            <div class="row"> Name: {{ ships.name }} </div>
+        <div class="col-11 redLine"></div>
+
+        <div class="col-11 textBox pt-2 p-4">
+            <div class="row  fs-4 text-light"> {{ ships.name }} </div>
             <div class="row"> Model: {{ ships.model }} </div>
             <div class="row"> Manufacturer: {{ ships.manufacturer }} </div>
             <div class="row"> Passengers: {{ ships.passengers }} </div>
             <div class="row"> Starship Class: {{ ships.starship_class }} </div>
-            <div class="row">  </div>
-            <button type="button" 
-                    class="mt-3 btn small btn-outline-dark btn-sm"
-                    routerLink="./listado">Volver</button>
+           
+            <a class="linkTarget  mt-1 pe-2 row justify-content-end" 
+               routerLink="./ships/listado">Volver</a>
+            
         </div>
+
     </div>   
+
+
 <div>
+    
 </div>
-</div>
+</div> -->
 </ng-template>
