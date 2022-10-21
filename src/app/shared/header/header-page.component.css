@@ -1,0 +1,95 @@
+.headerBig {
+    color: azure;
+}
+
+.nav-link{
+    color: #999
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.image{
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+/* navbar */
+
+.navbar-toggler{
+    border:none;
+    padding: 0.4rem;
+    color: transparent;
+}
+
+
+
+.navbar{
+ border: 1px solid rgba(85, 85, 85, 0.604)
+}
+
+.separationButton{
+    margin-top: -30px;
+    margin-bottom: -30px;
+
+    background-color:  rgba(85, 85, 85, 0.604);
+    height: 60px;
+    width: 1px;
+}
+
+#offcanvasDarkNavbar{
+    width: 40%;
+    border: 1px solid rgba(85, 85, 85, 0.604)
+}
+
+.logoLupa{
+    color: #999;
+}
+
+.bordes {
+    border: 1px solid rgba(85, 85, 85, 0.604)
+}
+
+.bordesButton {
+    border-left: 1px solid rgba(85, 85, 85, 0.604);
+    border-right: 1px solid rgba(85, 85, 85, 0.604);
+}
+
+/* login */
+
+.textLog{
+    color: #999;
+    cursor: pointer;
+    font-size: 0.875em;
+    text-shadow: 0 1px 6px rgb(0 0 0 / 50%);
+    font-family: "DIN Next W01 Regular", Helvetica, Arial, sans-serif;
+}
+
+.linesText {
+    display: inline-block;
+    color:#343434;
+    font-size: 1em;
+}
+
+a{  
+    letter-spacing: 1px;
+    font-size: 0.875em;
+    text-shadow: 0 1px 6px rgb(0 0 0 / 50%);
+    text-decoration: none;
+    color:#999;
+}
+
+a:hover{
+    color:rgb(186, 185, 185);
+}
+
+.textLog.sidebar{
+    font-size: 1em;
+    font-weight: 400;
+}
+
+

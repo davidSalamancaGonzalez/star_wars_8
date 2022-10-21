@@ -14,26 +14,25 @@
 
     <div class="row g-0">
 
-      <div class="col-md-5">
+      <div class="col-sm-5 col-md-6">
 
-        <img class="img-fluid imagen" [src]="imageUrl | imagenes: ships.id"
-          onerror="this.src='./assets/babyyoda.gif'">
+        <img class="img-fluid imagen" 
+             [src]="imageUrl | imagenes: ships.id"
+             onerror="this.src='./assets/babyyoda.gif'">   
+        </div>
 
-        <div class="col col-sm-12 redLine"></div>
+      <div class=" col-sm-7 col-md-6 ">
 
-      </div>
+        <div class="card-body container textBox ">
 
-      <div class="col-md-7">
-
-        <div class="card-body textBox">
-
-          <h5 class="card-title">{{ ships.name }}</h5>
+          <h5 class="card-title mb-4">{{ ships.name }}</h5>
           <p class="card-text"> Model: {{ ships.model }}</p>
           <p class="card-text"> Manufacturer: {{ ships.manufacturer }}</p>
           <p class="card-text"> Passengers: {{ ships.passengers }}</p>
           <p class="card-text"> Starship Class: {{ ships.starship_class }}</p>
 
-          <a class="linkTarget  mt-1 pe-2 row justify-content-end" routerLink="./ships/listado">Volver</a>
+       <a class="linkTarget mt-1 pe-2 row justify-content-end " 
+          routerLink="./ships/listado">Volver</a>
 
         </div>
       </div>

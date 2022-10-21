@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './shared/main-page/main-page.component';
+import { MainPageComponent } from './shared/header/header-page.component';
 
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 
@@ -15,7 +16,7 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
   declarations: [
     AppComponent,
     MainPageComponent,
-    
+    FooterComponent
    
    
    
@@ -24,7 +25,8 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

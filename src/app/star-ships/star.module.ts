@@ -8,7 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ImagenesPipe } from './pipes/imagenes.pipe';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { LayoutModule } from '@angular/cdk/layout';
-import { FooterComponent } from './pages/home/footer/footer.component';
+
 
 
 
@@ -19,7 +19,7 @@ import { FooterComponent } from './pages/home/footer/footer.component';
     ShipsComponent,
     HomeComponent,
     ImagenesPipe,
-    FooterComponent,
+    
    
     
     

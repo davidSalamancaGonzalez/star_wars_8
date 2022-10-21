@@ -1,0 +1,125 @@
+<!-- movile -->
+<div *ngIf= !showContainer>
+ 
+  
+  <nav class="navbar navbar-dark bg-black  navbar-expand-lg mb-5 ">
+      
+      <div class="container-fluid">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="separationButton ms-2"></div>
+         
+        <img class="m-auto"  src="./assets/Star-Wars-symbol_2.jpg" style="width:12rem;">
+    
+        <div class="separationButton ms-2"></div>
+    
+        <span class="ps-3 pe-1 material-symbols-outlined logoLupa">
+          search</span>
+     
+    
+    <!-- toggler -->
+    
+        <div class="offcanvas offcanvas-start bg-black" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+    
+          
+          
+          <div class="offcanvas-header text-end">
+            <span></span>
+            <button type="button " class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <p class="textLog sidebar"> 
+                  <a routerLink="/auth/login">LOG IN </a>
+                  <span class="linesText">/ /</span> 
+                  <a routerLink="/auth/register"> SIGN UP</a></p>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="./ships/listado" >Star ships</a>
+              </li>
+            </ul>
+          </div>
+          <div class="offcanvas-footer ms-1 mb-5">
+            <div class="col" >   
+              <div class="row mt-0 ms-1">
+    
+                  <div  class="col-1 ms-2" 
+                        *ngFor="let logo of logos" >  
+                     <a [href]="logo.link" 
+                        target="_blank">
+                   <img [src]="logo.source" 
+                        style="width: 1.4rem;"> 
+                    </a>      
+                  </div>
+  
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <div *ngIf=showContainer>
+  
+    <header class="container-fluid headerBig">
+    
+        <div class="row pb-4" [style.background-image]="'url(./assets/backgroundHeader.jpeg)'">
+        
+            <!-- column rrss -->
+    
+            <div class="col " >   
+                <div class="row mt-3 ms-1">
+                    <div class="col-1" *ngFor="let logo of logos" >  
+                             <a [href]="logo.link" target="_blank"> <img [src]="logo.source" style="width: 1.4rem;"> </a>      
+                    </div>                       
+                 </div>
+    
+            </div>
+            
+            <!-- column logo -->
+            <div class="col-3 col-xl-2 image mt-3 align-self-center">
+                <img src="/assets/Star-Wars-symbol.jpeg" 
+                     alt="logo Star Wars" 
+                     style="width:100%;" 
+                     class="image"
+                     routerLink="">
+            </div>
+    
+            <!-- column login -->
+            <div class="col align-self-center mt-4 me-3 linesText ">
+                <div class="text-end">
+                  <p class="textLog"> 
+                      <a routerLink="/auth/login">LOG IN </a>
+                      <span class="linesText">/ /</span> 
+                      <a routerLink="/auth/register"> SIGN UP</a></p>
+                </div>
+            </div>
+    
+        </div>
+    
+        <div class="row links mb-3 bordes loginDiv">
+    
+            <ul class="nav justify-content-center">
+    
+                <li class="nav-item ms-3 bordesButton">
+                  <a class="nav-link loginDiv">Home</a>
+                </li>
+    
+                <li class="nav-item bordesButton">
+                  <a class="nav-link" routerLink="/ships/listado">Listado</a>
+                </li>
+    
+              </ul>
+        </div>
+    
+    </header>
+  </div>
+  
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
