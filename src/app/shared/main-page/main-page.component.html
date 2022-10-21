@@ -2,7 +2,7 @@
 <div *ngIf= !showContainer>
  
   
-  <nav class="navbar navbar-dark bg-black  navbar-expand-lg mb-5 ">
+  <nav class="navbar navbar-dark bg-black  navbar-expand-lg  ">
       
       <div class="container-fluid">
         
@@ -12,7 +12,10 @@
         
         <div class="separationButton ms-2"></div>
          
-        <img class="m-auto"  src="./assets/Star-Wars-symbol_2.jpg" style="width:12rem;">
+        <img class="m-auto addLinkImage"  
+             src="./assets/Star-Wars-symbol_2.jpg" 
+             style="width:12rem;"
+             routerLink="/main">
     
         <div class="separationButton ms-2"></div>
     
@@ -20,7 +23,7 @@
           search</span>
      
     
-    <!-- toggler -->
+    <!-- toggler xpanded -->
     
         <div class="offcanvas offcanvas-start bg-black" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
     
@@ -40,7 +43,8 @@
                   <a routerLink="/auth/register"> SIGN UP</a></p>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="./ships/listado" >Star ships</a>
+                <a class="nav-link" 
+                   routerLink="/ships/listado" >Star ships</a>
               </li>
             </ul>
           </div>
@@ -103,7 +107,7 @@
     
         </div>
     
-        <div class="row links mb-3 bordes loginDiv">
+        <div class="row links  bordes loginDiv">
     
             <ul class="nav justify-content-center">
     
@@ -121,5 +125,5 @@
     </header>
   </div>
   
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  <!-- <router-outlet></router-outlet> -->
+  

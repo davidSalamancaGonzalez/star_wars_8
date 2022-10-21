@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../../services/header.service';
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',

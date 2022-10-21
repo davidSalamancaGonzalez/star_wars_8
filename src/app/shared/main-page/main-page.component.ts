@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../../star-ships/services/header.service';
-import { Logos } from '../../star-ships/interfaces/header.interface';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './header-page.component.html',
-  styleUrls: ['./header-page.component.css']
+  selector: 'app-header-page',
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
  

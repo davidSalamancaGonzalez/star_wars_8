@@ -1,0 +1,18 @@
+
+.subHeader {
+    color: #999;
+    font-size: 0.8em;
+    border: 1px solid rgba(85, 85, 85, 0.604);
+    border-top: none;  
+    letter-spacing: 1px; 
+     background-color: #121212;   
+}
+
+.subHeader:hover{
+    color: rgb(200, 199, 199);
+    cursor: pointer;
+} 
+
+.photoHome{
+    max-width: 100%;
+}

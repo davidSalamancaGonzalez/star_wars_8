@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainPageComponent } from './shared/header/header-page.component';
+import { HomeComponent } from './home/home/home.component';
 
 const routes: Routes = [
 
@@ -8,7 +8,7 @@ const routes: Routes = [
 
   {path: 'ships', loadChildren: () => import ('./star-ships/star.module').then(m => m.StarModule)},
 
-  {path: "main" , component: MainPageComponent},
+  {path: "main" , component: HomeComponent},
   
   {path: "**"   , redirectTo: "main" },
 ];

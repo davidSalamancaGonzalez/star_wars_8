@@ -20,6 +20,10 @@ ul {
 
 /* navbar */
 
+.addLinkImage{
+    cursor: pointer;
+}
+
 .navbar-toggler{
     border:none;
     padding: 0.4rem;
@@ -61,6 +65,10 @@ ul {
 
 /* login */
 
+.loginDiv {
+    background-color: black;
+}
+
 .textLog{
     color: #999;
     cursor: pointer;
@@ -91,5 +99,6 @@ a:hover{
     font-size: 1em;
     font-weight: 400;
 }
+
 
 
