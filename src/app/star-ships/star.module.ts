@@ -8,6 +8,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { ListComponent } from './pages/list/list.component';
 import { StarRoutingModule } from './star-routing.module';
 import { ShipsComponent } from './pages/ships/ships.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -20,17 +21,15 @@ import { ShipsComponent } from './pages/ships/ships.component';
     ShipsComponent,
     HomeComponent,
     ImagenesPipe,
-   
-    
-   
-    
-    
+  
   ],
   imports: [
     CommonModule,
     StarRoutingModule,
     InfiniteScrollModule,
     LayoutModule,
+    SharedModule
+    
     
     
   ]

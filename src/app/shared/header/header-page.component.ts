@@ -1,21 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../../star-ships/services/header.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { AuthService } from '../../auth/services/auth.service';
+import { Auth } from 'src/app/auth/interfaces/auth.interface';
 
 @Component({
   selector: 'app-header-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  templateUrl: './header-page.component.html',
+  styleUrls: ['./header-page.component.css']
 })
-export class MainPageComponent implements OnInit {
+export class HeaderPageComponent implements OnInit {
  
   showContainer:boolean = true;
+  user!:Auth;
   
   constructor( private headerService:HeaderService,
-               public breakpointObserver: BreakpointObserver) { }
+               public breakpointObserver: BreakpointObserver,
+               private authService: AuthService) { }
   
   logos: any;
   
+   get auth() {
+    return this.authService.user;
+  }
 
   ngOnInit(): void {
     this.logos = this.headerService.logos;
