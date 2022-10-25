@@ -14,34 +14,54 @@
          <h3>CREATE YOUR ACCOUNT</h3>
         </div>
 
-            <form class="mb-3 col-11 m-auto" 
-                  [formGroup]="registerForm">
 
-                <input type="text" 
-                       class="form-control mb-3" 
-                       id="exampleFormControlInput1" 
-                       placeholder="First Name" 
-                       name="fName">
-                
+        <!-- FORM REGISTER -->
+
+
+
+            <form class="mb-3 col-11 m-auto" 
+                  (ngSubmit)="saveUser()"
+                  [formGroup]="registerForm">
+        <div class="mb-3">
+
+               <input type="text" 
+                      class="form-control" 
+                      id="exampleFormControlInput1" 
+                      placeholder="First Name" 
+                      formControlName="first_name"
+                      >
+               <span class="form-text text-danger mt-0 mb-0"
+                     *ngIf="required('first_name')">Please enter your first name</span>
+        </div>
+        <div class="mb-3">    
                 <input type="text" 
                        class="form-control mb-3" 
                        id="exampleFormControlInput2" 
                        placeholder="Last Name"
-                       name="lName" >
-
+                       formControlName="last_name" >
+              <span class="form-text text-danger mt-0 mb-0"
+                       *ngIf="required('last_name')">Please enter your last name</span>
+        </div>
+        <div class="mb-3">   
                 <input type="email" 
                        class="form-control mb-3" 
                        id="exampleFormControlInput3" 
                        placeholder="name@starwars.com"
-                       name="email">
-
+                       formControlName="email">
+                <span class="form-text text-danger mt-0 mb-0"
+                       *ngIf="required('email')">Please enter a correct email</span>
+       </div>
+       <div class="mb-3">   
                 <input type="password" 
                        class="form-control" 
                        id="exampleFormControlInput4" 
                        placeholder="*******"
-                       name="password">
-
-                <button class="btn mt-3 mb-3 col-12 submitBut" type="submit">Continue</button>
+                       formControlName="password">
+                 <span class="form-text text-danger mt-0 mb-0"
+                       *ngIf="required('password')">Please enter a correct password</span>
+       </div>
+                <button class="btn mt-3 mb-3 col-12 submitBut" 
+                        type="submit">Continue</button>
 
                 <p class="pb-3 text-center small">Already have an account? 
                 <a routerLink="/auth/login">Sign In</a></p>

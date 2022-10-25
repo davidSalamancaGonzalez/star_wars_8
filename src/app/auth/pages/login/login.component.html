@@ -14,21 +14,39 @@
          <h3>ENTER YOUR EMAIL & PASSWORD</h3>
         </div>
 
-            <div class="mb-3 col-11 m-auto">
+<!-- FORM LOGIN -->
+<form (ngSubmit)="loginFront()"
+[formGroup]="loginForm"> 
+    
+    <div class="mb-3 col-11 m-auto">
+    
+        <div class="mb-3">
+            <input type="email" 
+                   class="form-control" 
+                   id="exampleFormControlInput1" 
+                   placeholder="name@starwars.com"
+                   formControlName="email">
+                   <span class="form-text text-danger mt-0 mb-0"
+                   *ngIf="required('email')">Please enter your first name</span>
+        </div>
+        
+        <div class="mb-0">
 
-                <input type="email" 
-                       class="form-control mb-3" 
-                       id="exampleFormControlInput1" 
-                       placeholder="name@starwars.com">
+            <input type="password" 
+                   class="form-control" 
+                   id="exampleFormControlInput2" 
+                   placeholder="*******"
+                   formControlName="password">
+                   <span class="form-text text-danger mt-0 mb-0"
+                   *ngIf="required('password')">Please enter your first name</span>
+        
+        </div>
+        <button class="btn mt-3 mb-5 col-12 submitBut" type="submit">Continue</button>
+    
+      </div>
 
-                <input type="password" 
-                       class="form-control" 
-                       id="exampleFormControlInput2" 
-                       placeholder="*******">
+</form>
 
-                <button class="btn mt-3 mb-5 col-12 submitBut" type="submit" (click)="login()">Continue</button>
-
-              </div>
         
 
         
