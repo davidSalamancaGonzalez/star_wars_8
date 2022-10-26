@@ -13,11 +13,16 @@
          *ngFor="let item of ships" 
          [routerLink]="['/ships', item.id ]">
 
-      <div class="card-body">
+      <div class="card-body text-center">
         <h5 class="card-title"> {{item.name}} </h5>
-        <p class="card-text"> {{item.model}} </p>
+        <p class="card-text subHeader"> {{item.model}} </p>
       </div>
     </div>
 
   </div>
+
+
+
+
+
 </div>

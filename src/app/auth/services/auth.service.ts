@@ -10,7 +10,7 @@ import { Auth } from '../interfaces/auth.interface';
 })
 export class AuthService {
 
-private baseUrl: string = "http://localhost:3000/usuarios/";
+private baseUrl: string = "http://localhost:3000/usuarios/8";
 private _user:Auth | undefined;
 
 get user(){
@@ -38,8 +38,9 @@ login(){
   return this.http.get<Auth>(this.baseUrl)
   .pipe(
     tap( auth => this._user = auth),
-    tap( auth => localStorage.setItem('token', auth.id) )
-  )
+    tap( auth => localStorage.setItem('token', auth.id) ),
+    )
+  
 }
 
 // INSERT USER ON DB.JSON

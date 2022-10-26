@@ -16,7 +16,7 @@
 
       <div class="col-sm-5 col-md-6">
 
-        <img class="img-fluid imagen" 
+        <img class="img-fluid imagen w-100" 
              [src]="imageUrl | imagenes: ships.id"
              onerror="this.src='./assets/babyyoda.gif'">   
         </div>
@@ -30,9 +30,25 @@
           <p class="card-text"> Manufacturer: {{ ships.manufacturer }}</p>
           <p class="card-text"> Passengers: {{ ships.passengers }}</p>
           <p class="card-text"> Starship Class: {{ ships.starship_class }}</p>
+    
+<div class="row">
 
-       <a class="linkTarget mt-1 pe-2 row justify-content-end " 
-          routerLink="./ships/listado">Volver</a>
+  <div class="justify-content-start mb-3 pilots">
+    
+    <a class="linkTarget mt-1"  
+       [routerLink]="this.idUrl"
+       *ngIf="pilots" >Pilots</a>
+  
+   </div>
+
+  <div class="c"> 
+
+      <a class="linkTarget mt-1" 
+         routerLink="./ships/listado">Back to Star Ships</a>
+         
+    </div> 
+
+</div>
 
         </div>
       </div>
