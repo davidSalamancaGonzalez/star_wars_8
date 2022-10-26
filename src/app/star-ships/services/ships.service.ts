@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { StarShips, Ships } from '../interfaces/ships.interface';
 import { Pilot, Pilots } from '../interfaces/pilot.interface';
+import { Film } from '../interfaces/movies.interface';
 
 
 @Injectable({
@@ -11,8 +12,8 @@ import { Pilot, Pilots } from '../interfaces/pilot.interface';
 export class ShipsService {
 
 
-  apiUrl: string = 'https://swapi.py4e.com/api'
-
+  apiUrl: string = 'https://swapi.py4e.com/api';
+  id: string = "";
 
   constructor(private http: HttpClient) { }
 
@@ -22,11 +23,16 @@ export class ShipsService {
   }
 
   getShipId(id: string) {
+    this.id = id;
     return this.http.get<Ships>(`${this.apiUrl}/starships/${id}`);
   }
 
   getPilots(id:string | undefined){
-      return this.http.get<Pilot>(`${this.apiUrl}/people/${id}`); 
+      return this.http.get<Pilot>(`${id}`); 
+  }
+  
+  getFilms(id:string | undefined){
+      return this.http.get<Film>(`${id}`);
   }
 
   setId(ships: StarShips) {

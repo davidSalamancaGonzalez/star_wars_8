@@ -10,6 +10,7 @@ import { StarRoutingModule } from './star-routing.module';
 import { ShipsComponent } from './pages/ships/ships.component';
 import { SharedModule } from '../shared/shared.module';
 import { PilotsComponent } from './pages/ships/pilots/pilots.component';
+import { MoviesComponent } from './pages/ships/movies/movies.component';
 
 
 
@@ -23,6 +24,7 @@ import { PilotsComponent } from './pages/ships/pilots/pilots.component';
     HomeComponent,
     ImagenesPipe,
     PilotsComponent,
+    MoviesComponent,
   
   ],
   imports: [
