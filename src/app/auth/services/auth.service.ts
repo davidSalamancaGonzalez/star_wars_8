@@ -10,7 +10,7 @@ import { Auth } from '../interfaces/auth.interface';
 })
 export class AuthService {
 
-private baseUrl: string = "http://localhost:3000/usuarios/8";
+private baseUrl: string = "http://localhost:3000/usuarios/1";
 private _user:Auth | undefined;
 
 get user(){

@@ -14,7 +14,10 @@ export class ShipsComponent implements OnInit {
 ships! : Ships;
 imageUrl: string = "https://starwars-visualguide.com/assets/img/starships/"
 pilots:boolean = false;
-idUrl: string = "";
+films:boolean = false;
+idUrlPilots: string = "";
+idUrlFilms:string = "";
+
 
   constructor( private activatedRoute: ActivatedRoute, private shipsService: ShipsService) { }
 
@@ -31,8 +34,13 @@ idUrl: string = "";
         
         if(ships.pilots.length > 0){
           this.pilots = true;
-          this.idUrl = `/ships/${this.ships.id}/pilots`
+          this.idUrlPilots = `/ships/${this.ships.id}/pilots`
         }
+        if(ships.films.length > 0){
+          this.films = true;
+          this.idUrlFilms = `/ships/${this.ships.id}/film`
+        }
+
       })   
           
   }

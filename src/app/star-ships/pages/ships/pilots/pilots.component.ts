@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs';
+import { switchMap,tap } from 'rxjs';
 import { ShipsService } from 'src/app/star-ships/services/ships.service';
-import { Pilot, Pilots } from '../../../interfaces/pilot.interface';
+import { Pilot } from '../../../interfaces/pilot.interface';
+import { Ships } from '../../../interfaces/ships.interface';
 
 @Component({
   selector: 'app-pilots',
@@ -12,8 +13,8 @@ import { Pilot, Pilots } from '../../../interfaces/pilot.interface';
 export class PilotsComponent implements OnInit {
 
   pilots: Pilot[] = [];
-  id!:string | undefined;
   urlBack!: string;
+  
 
   constructor(private activatedRoute: ActivatedRoute, private shipsService: ShipsService) { }
 
@@ -22,22 +23,23 @@ export class PilotsComponent implements OnInit {
 
     this.activatedRoute.params
     .pipe(
-      switchMap( ({ id }) => this.shipsService.getShipId( id )),
-      )
-      .subscribe( ships => {
-        let reg = /['0-9']/ig
-        this.id =  ships.url.slice(ships.url.length - 4, ships.url.length -1).match(reg)?.join('');
-        this.urlBack = `/ships/${this.id}` 
+      switchMap( ({ id }) => this.shipsService.getShipId( id )))
+      .subscribe({
+        next : ( ship : Ships) => {
+          ship.pilots.forEach((id:string) => 
+          this.shipsService.getPilots(id)
+          .subscribe((pilots : Pilot) => {
+            this.pilots.push(pilots)}))
+        }
       
-      this.shipsService.getPilots(this.id)
-        .subscribe(resp => {
-         this.pilots.push (resp)
-        
-        })
-
-      }) 
+      })
+     
+      this.activatedRoute.params
+      .subscribe( ({ id }) => {
+        this.urlBack = `/ships/${id}`})
+    
       
-
+    
   }
 
 }

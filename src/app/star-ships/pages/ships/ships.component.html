@@ -10,7 +10,7 @@
 
   <div class="d-flex justify-content-center my-5 pb-5">
 
-  <div class="card mx-3 general" >
+  <div class="card mx-3 general " >
 
     <div class="row g-0">
 
@@ -35,14 +35,23 @@
 
   <div class="justify-content-start mb-3 pilots">
     
-    <a class="linkTarget mt-1"  
-       [routerLink]="this.idUrl"
-       *ngIf="pilots" >Pilots</a>
-  
+    <div>
+      <a class="linkTarget mt-1 "  
+         [routerLink]="this.idUrlPilots"
+         *ngIf="pilots" >Pilots</a>
+
+    </div>
+   
+    <div>
+
+      <a class="linkTarget mt-1"  
+            [routerLink]="this.idUrlFilms"
+            *ngIf="films" >Films</a>
+         
+    </div>
    </div>
 
-  <div class="c"> 
-
+  <div> 
       <a class="linkTarget mt-1" 
          routerLink="./ships/listado">Back to Star Ships</a>
          
