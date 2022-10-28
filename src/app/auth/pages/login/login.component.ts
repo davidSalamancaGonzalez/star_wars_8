@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
   loginForm: FormGroup = this.fb.group({
-    email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-    password: ['', [Validators.required]]
+    email: ['tres@gmail.com', [Validators.required, Validators.pattern(this.emailPattern)]],
+    password: ['test', [Validators.required]]
   })
 
   required(field: string) {
@@ -33,22 +33,9 @@ export class LoginComponent implements OnInit {
 
   loginFront() {
 
-    if(this.loginForm.valid) {
-    }
-
-
-    this.authService.login()
-      .subscribe(resp => {
-        if (resp.id) {
-          this.router.navigate(["/main"])
-        }
-
-        else {
-          console.log("no pasa");
-          this.loginForm.markAllAsTouched();
-        }
-
-      })
+    const {email , password } = this.loginForm.value;
+    this.authService.login(email , password)
+    .subscribe(resp  => console.log(resp.user.id))
   }
 }
 

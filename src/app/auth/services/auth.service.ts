@@ -3,7 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { tap, Observable, map, of } from 'rxjs';
 
-import { Auth } from '../interfaces/auth.interface';
+import { Auth, AuthResponse } from '../interfaces/auth.interface';
+
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +27,7 @@ authVer():Observable<boolean> {
     return of(false);
   }
 
-  return this.http.get<Auth>(this.baseUrl)
+  return this.http.get<Auth>(`${this.baseUrl}users`)
   .pipe(
     map ( auth => {
       this._user = auth
@@ -33,13 +36,20 @@ authVer():Observable<boolean> {
   )
 }
 
-login(){
-  return this.http.get<Auth>(this.baseUrl)
+
+login(email:string, password:string){
+
+const url = `${this.baseUrl}login`
+const body = {email , password}
+
+  return  this.http.post<AuthResponse>(url, body)
   .pipe(
-    tap( auth => this._user = auth),
-    tap( auth => localStorage.setItem('token', auth.id) ),
-    )
-  
+    tap( auth => this._user = auth.user),
+    tap( auth => localStorage.setItem('token', auth.user.id) ),
+    map( resp => resp)
+  )
+
+
 }
 
 // INSERT USER ON DB.JSON
