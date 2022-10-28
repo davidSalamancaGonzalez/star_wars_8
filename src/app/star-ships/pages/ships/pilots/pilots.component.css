@@ -1,5 +1,5 @@
 .redLine {
-    border: 1px solid #9e4f60;
+    border: 2px solid #9e4f60;
 }
 
 .back{
@@ -16,6 +16,8 @@
     border-top-left-radius: 3% 3%;
     border-top-right-radius: 3% 3%;
     border-bottom: 2px solid #ba6b7c ;
+  
+    
 }
 
 .textBox{
@@ -36,7 +38,7 @@
     color: #ba6b7c;
 }
 
-@media (min-width: 576px ){
+@media (min-width: 768px ){
     .general {
         border-top-left-radius: 5px 5px;
         border-top-right-radius: 5px 5px;
@@ -47,8 +49,9 @@
         border-top-left-radius: 5px 5px;
         border-top-right-radius: 0% 0%;
         border-bottom-left-radius:  5px 5px;
-        border-right: 2px solid #ba6b7c ;
         border-bottom: none ;
+        border-right: 2px solid #ba6b7c ;
+       
         
     }
     

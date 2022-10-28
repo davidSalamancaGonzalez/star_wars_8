@@ -29,8 +29,7 @@ idUrlFilms:string = "";
       )
       .subscribe( ships => {
         this.ships = ships;
-        let reg = /['0-9']/ig
-        this.ships.id =  ships.url.slice(ships.url.length - 4, ships.url.length -1).match(reg)?.join('');
+        this.ships.id = this.shipsService.cutId(ships)
         
         if(ships.pilots.length > 0){
           this.pilots = true;

@@ -7,29 +7,33 @@
 </div>
 
 <ng-template #information>
-
-  <div class="d-flex justify-content-center my-5 pb-5">
+ 
+  <div class="d-flex justify-content-center my-5 pb-5" >
 
   <div class="card mx-3 general " >
 
     <div class="row g-0">
 
-      <div class="col-sm-5 col-md-6">
+      <div class="col-12 col-md-7">
 
-        <img class="img-fluid imagen w-100" 
+        <img class="img-fluid imagen" 
              [src]="imageUrl | imagenes: ships.id"
-             onerror="this.src='./assets/babyyoda.gif'">   
+             onerror="this.src='./assets/babyyoda.gif'"
+             style="height: 100% ;">   
         </div>
 
-      <div class=" col-sm-7 col-md-6 ">
+      <div class=" col col-md-5 ">
 
-        <div class="card-body container textBox ">
+        <div class="card-body container textBox h-100">
 
           <h5 class="card-title mb-4">{{ ships.name }}</h5>
-          <p class="card-text"> Model: {{ ships.model }}</p>
-          <p class="card-text"> Manufacturer: {{ ships.manufacturer }}</p>
-          <p class="card-text"> Passengers: {{ ships.passengers }}</p>
-          <p class="card-text"> Starship Class: {{ ships.starship_class }}</p>
+         <span>Model:</span>
+         <p class="card-text">{{ ships.model }}</p>
+         <span>Manufacturer:</span>
+         <p class="card-text">{{ ships.manufacturer }}</p>
+         <p class="card-text">Pasengers: {{ ships.passengers }}</p>
+         <span>Starship Class: </span>
+         <p class="card-text">{{ ships.starship_class }}</p>
     
 <div class="row">
 

@@ -16,6 +16,10 @@
     border-top-left-radius: 3% 3%;
     border-top-right-radius: 3% 3%;
     border-bottom: 2px solid #ba6b7c ;
+    padding: 0 !important;
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
 }
 
 .textBox{
@@ -41,7 +45,7 @@
 }
 
 
-@media (min-width: 576px ){
+@media (min-width: 768px ){
     .general {
         border-top-left-radius: 5px 5px;
         border-top-right-radius: 5px 5px;

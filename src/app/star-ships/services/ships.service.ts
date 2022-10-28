@@ -35,6 +35,12 @@ export class ShipsService {
       return this.http.get<Film>(`${id}`);
   }
 
+  cutId(ships : Ships) :string | undefined {
+    let reg = /['0-9']/ig
+    ships.id =  ships.url.slice(ships.url.length - 4, ships.url.length -1).match(reg)?.join('');
+    return ships.id
+  }
+
   setId(ships: StarShips) {
     ships.results.map(ship => {
       let reg = /['0-9']/ig;

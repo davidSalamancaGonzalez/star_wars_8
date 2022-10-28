@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm.reset()
 
     // TODO create modal with correct register
-    this.router.navigate(["/auth/login"])
+    this.router.navigate(["/main"])
   }
 
 }

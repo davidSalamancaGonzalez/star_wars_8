@@ -1,59 +1,49 @@
 <div class="container text-center mt-5 back" *ngIf="!film; else information">
 
-    <div class="spinner-grow text-light" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  
+  <div class="spinner-grow text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
   </div>
-  
-  <ng-template #information>
-  
-    <div class="justify-content-center col-xl-8 m-auto">
-  
-    <div class="card mx-3 general my-5 pb-5"
-    *ngFor="let movie of film"  >
-  
-      <div class="row g-0">
-  
-        <div class="col-12 col-sm-6">
-  
-          <img class="img-fluid imagen w-100" 
-          [src]="this.poster"
-          onerror="this.src='./assets/babyyoda.gif'"
-          style="max-width: 500px ;">   
-          </div>
-  
-        <div class=" col col-sm-6">
-  
-          <div class="card-body container textBox ">
-  
-            <h5 class="card-title mb-4">       {{ movie.title    }}</h5>
-            <p class="card-text">              {{ movie.opening_crawl }} </p>
-            <p class="card-text">Director:     {{ movie.director }} </p>
-            <p class="card-text">Producer:     {{ movie.producer }} </p>
-            <p class="card-text">Release date: {{ movie.release_date }} </p>
-            <p class="card-text"> </p>
-      
-  
-        
-         <a class="linkTarget mt-1 pe-2 row justify-content-end " 
-            [routerLink]="this.urlBack" >Back to Star-Ship</a>
-  
+
+</div>
+
+<ng-template #information>
+
+  <div class="d-flex justify-content-center my-5 pb-5 m-auto" *ngFor="let movie of film" style="max-width:1200px ;">
+
+    <div class="card mx-3 general ">
+
+      <div class="row g-3">
+
+        <div class="col-12 col-md-5">
+
+          <img class="img-fluid imagen" [src]="movie.episode_id | movie" onerror="this.src='./assets/babyyoda.gif'">
+        </div>
+
+        <div class=" col col-md-7 ">
+
+          <div class="card-body container textBox h-100" >
+
+            <div class="card-body textBox h-100">
+
+              <h5 class="card-title mb-4"> {{ movie.title    }}</h5>
+              <p class="card-text"> {{ movie.opening_crawl }} </p>
+              <p class="card-text">Director: {{ movie.director }} </p>
+              <p class="card-text">Producer: {{ movie.producer }} </p>
+              <p class="card-text">Release date: {{ movie.release_date }} </p>
+
+              <small>
+                <a class="linkTarget" 
+                [routerLink]="this.urlBack">Back to Star-Ship</a>
+              </small>
+              
+
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-   
-  </ng-template>
-  
 
 
 
-<!-- <div class=" col-sm-7 col-md-6">
-    <div *ngFor="let film of films">
-        <p>film name: {{film.name}}</p>
-        <p>film gender: {{film.gender}}</p>
-    </div>
-</div> -->
+</ng-template>

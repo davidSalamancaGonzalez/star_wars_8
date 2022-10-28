@@ -1,7 +1,8 @@
 .back{
-    background-color:#2222227d;
+    background-color:#2222228d;
     color: #aaa;
     overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -40px 36px -28px inset;
 }
 
 .shipCard{
@@ -14,5 +15,5 @@
 }
 
 .subHeader{
-    color: #9e4f60;
+    color: rgb(158, 79, 96);
 }

@@ -9,6 +9,7 @@ import { ShipsService } from '../../services/ships.service';
 })
 export class ListComponent implements OnInit {
 
+  // infinite scroll setup
 throttle = 150;
 distance = 2;
 page = 1;

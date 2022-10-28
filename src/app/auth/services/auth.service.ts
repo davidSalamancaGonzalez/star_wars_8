@@ -10,7 +10,7 @@ import { Auth } from '../interfaces/auth.interface';
 })
 export class AuthService {
 
-private baseUrl: string = "http://localhost:3000/usuarios/1";
+private baseUrl: string = "http://localhost:3000/";
 private _user:Auth | undefined;
 
 get user(){
@@ -34,7 +34,6 @@ authVer():Observable<boolean> {
 }
 
 login(){
-  console.log(this.baseUrl);
   return this.http.get<Auth>(this.baseUrl)
   .pipe(
     tap( auth => this._user = auth),
@@ -46,7 +45,7 @@ login(){
 // INSERT USER ON DB.JSON
 
 insertUser( user : Auth ): Observable<Auth>{
-return this.http.post<Auth>(`${this.baseUrl}`, user)
+return this.http.post<Auth>(`${this.baseUrl}register`, user)
 }
 
 

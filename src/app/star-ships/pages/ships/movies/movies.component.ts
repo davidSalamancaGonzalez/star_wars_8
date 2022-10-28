@@ -13,10 +13,10 @@ import { ShipsService } from 'src/app/star-ships/services/ships.service';
 })
 export class MoviesComponent implements OnInit {
 
-  film : Film[] = [];
-  id!:string | undefined;
+  film    : Film[] = [];
+  id!     : string | undefined;
   urlBack!: string;
-  poster:string = "";
+  poster! : number;
 
   constructor( private activatedRoute: ActivatedRoute, 
                private shipsService: ShipsService ) { }
@@ -31,7 +31,8 @@ export class MoviesComponent implements OnInit {
           ship.films.forEach((id:string) => 
           this.shipsService.getFilms(id)
           .subscribe((film : Film) => {
-            this.film.push(film)}))
+            this.film.push(film),
+          this.poster = film.episode_id}))
         }
       
       })
