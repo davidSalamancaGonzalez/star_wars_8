@@ -1,0 +1,55 @@
+<div class="container text-center mt-5 back" *ngIf="!pilots; else information">
+
+  <div class="spinner-grow text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+</div>
+
+<ng-template #information>
+    
+    <div class="d-flex justify-content-center my-5 pb-5">
+  
+    <div class="card mx-3 general"
+    *ngFor="let pilot of pilots"  >
+  
+      <div class="row g-0">
+  
+        <div class="col-sm-7 col-md-6">
+  
+          <img class="img-fluid imagen w-100" 
+          [src]="pilot.url| imagenes: pilot"
+          onerror="this.src='./assets/babyyoda.gif'"
+          style="width: 100% ;">   
+          </div>
+  
+        <div class=" col-sm-5 col-md-6 ">
+  
+          <div class="card-body container textBox ">
+  
+            <h5 class="card-title mb-4">{{ pilot.name }}</h5>
+            <p class="card-text">Birth year: {{ pilot.birth_year }} </p>
+            <p class="card-text">Gender:     {{ pilot.gender     }} </p>
+            <p class="card-text">Hair Color: {{ pilot.hair_color }} </p>
+            <p class="card-text">Eye Color:  {{ pilot.eye_color  }} </p>
+            <p class="card-text">Skin Color: {{ pilot.skin_color }} </p>
+            <p class="card-text"> </p>
+    
+            <small>
+              <a class="linkTarget mt-1 pe-2" 
+                 [routerLink]="this.urlBack" >Back to Star-Ships</a>
+            </small>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </ng-template>
+
+
+
+

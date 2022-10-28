@@ -1,0 +1,73 @@
+<app-header-page></app-header-page>
+<!-- sub-header main -->
+<div class="text-center subHeader py-3">STREAM STAR WARS ON DISNEY+</div>
+
+<main>
+
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active p-2">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/106-andor-mobile_a7aa5624.jpeg?region=0,0,1024,626" class="d-block w-100" alt="...">
+           
+           
+          </div>
+          <div class="carousel-item p-2">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/bhtg-hero-mobile_a05355ec.jpeg?region=0,0,1024,626" class="d-block w-100" alt="...">
+        </div>
+         
+        <div class="carousel-item p-2">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/108-andor-mobile_2161a877.jpeg?region=0,0,1024,626" class="d-block w-100" alt="...">
+        </div>
+
+        <div class="carousel-item p-2">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/tales-of-the-jedi-new-swcom-slide-mobile-_2_46ff8d1f.jpeg?region=0,0,1024,626" class="d-block w-100" alt="...">
+        </div>
+        
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<!-- img fixed -->
+
+<div class="container-fluid text-center mt-2">
+    <img 
+    class="img-fluid"
+    src="https://lumiere-a.akamaihd.net/v1/images/swc22_digital_signage_dev1-noschedules_d4eedffe.png?region=0,0,1920,1080&width=600" 
+    alt="halloween">
+</div>
+
+    <div class="container-fluid mt-2">
+        <img 
+        class="img-fluid back"
+        src="/assets/wallpa1.jpg" 
+        alt="halloween">
+    </div>
+    
+    <div class="container text-center p-2"
+    *ngIf= 'size; else shortBanner'>
+
+        <img 
+        class="img-fluid mt-3"
+        src="/assets/banner-long.webp" alt="halloween larger banner">
+        
+    </div>
+    
+    <ng-template  #shortBanner> 
+        <img 
+        class="img-fluid mt-3"
+        src="/assets/banner-short.webp" alt="halloween banner small">
+    </ng-template>
+
+
+</main>
+
+<app-footer></app-footer>
+

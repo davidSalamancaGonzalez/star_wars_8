@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainPageComponent } from './shared/main-page/main-page.component';
+import { HomeComponent } from './home/home/home.component';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
 
   {path: 'auth', loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)},
 
-  {path: 'ships', loadChildren: () => import ('./star-ships/star.module').then(m => m.StarModule)},
+  {path: 'ships', loadChildren: () => import ('./star-ships/star.module').then(m => m.StarModule),
+  canLoad     : [ AuthGuard ],
+  canActivate : [ AuthGuard ]},
 
-  {path: "main" , component: MainPageComponent},
+  {path: "main" , component: HomeComponent},
   
   {path: "**"   , redirectTo: "main" },
 ];

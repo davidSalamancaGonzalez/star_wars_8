@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
+import { Ships } from '../../interfaces/ships.interface';
+import { ShipsService } from '../../services/ships.service';
 
 @Component({
   selector: 'app-ships',
@@ -7,9 +11,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShipsComponent implements OnInit {
 
-  constructor() { }
+ships! : Ships;
+imageUrl: string = "https://starwars-visualguide.com/assets/img/starships/"
+pilots:boolean = false;
+films:boolean = false;
+idUrlPilots: string = "";
+idUrlFilms:string = "";
 
-  ngOnInit(): void {
+
+  constructor( private activatedRoute: ActivatedRoute, private shipsService: ShipsService) { }
+
+  ngOnInit() {
+    
+    this.activatedRoute.params
+    .pipe(
+      switchMap( ({ id }) => this.shipsService.getShipId( id )),
+      )
+      .subscribe( ships => {
+        this.ships = ships;
+        this.ships.id = this.shipsService.cutId(ships)
+        
+        if(ships.pilots.length > 0){
+          this.pilots = true;
+          this.idUrlPilots = `/ships/${this.ships.id}/pilots`
+        }
+        if(ships.films.length > 0){
+          this.films = true;
+          this.idUrlFilms = `/ships/${this.ships.id}/film`
+        }
+
+      })   
+          
   }
 
+
 }
+ 

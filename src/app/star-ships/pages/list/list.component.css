@@ -1,3 +1,19 @@
 .back{
-    background-color: black;
+    background-color:#2222228d;
+    color: #aaa;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -40px 36px -28px inset;
+}
+
+.shipCard{
+    cursor: pointer;
+}
+
+.redLine {
+    border: 1px solid #9e4f60;
+    width: 50%;
+}
+
+.subHeader{
+    color: rgb(158, 79, 96);
 }

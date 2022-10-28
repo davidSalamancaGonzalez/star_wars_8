@@ -1,0 +1,72 @@
+.redLine {
+    border: 1px solid #9e4f60;
+}
+
+.back{
+    background-color: black;
+}
+
+.general {
+    background-color: #282727;
+    border-top-left-radius: 3% 3%;
+    border-top-right-radius: 3% 3%;
+}
+
+.imagen {
+    border-top-left-radius: 3% 3%;
+    border-top-right-radius: 3% 3%;
+    border-bottom: 2px solid #ba6b7c ;
+    padding: 0 !important;
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.textBox{
+    color: #aaa;
+    background-color: #282727;
+    border-bottom-left-radius:  3% 3%;
+    border-bottom-right-radius: 3% 3%;
+    
+}
+
+.linkTarget{
+    color:  #9e4f60;
+    text-decoration: none;
+
+}
+
+.linkTarget:hover {
+    color: #ba6b7c;
+}
+
+.pilots {
+   font-size: 1.2rem;
+}
+
+
+@media (min-width: 768px ){
+    .general {
+        border-top-left-radius: 5px 5px;
+        border-top-right-radius: 5px 5px;
+        border-bottom-right-radius: 5px 5px;
+    }
+    
+    .imagen {
+        border-top-left-radius: 5px 5px;
+        border-top-right-radius: 0% 0%;
+        border-bottom-left-radius:  5px 5px;
+        border-right: 2px solid #ba6b7c ;
+        border-bottom: none ;
+        
+    }
+    
+    .textBox{
+        color: #aaa;
+        background-color: #282727;
+        border-top-right-radius: 0% 0%;
+        border-top-left-radius: 0% 0%;
+       
+        
+    }
+}

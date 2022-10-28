@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { StarShips } from '../interfaces/ships.interface';
+import { StarShips, Ships } from '../interfaces/ships.interface';
+import { Pilot } from '../interfaces/pilot.interface';
+import { Film } from '../interfaces/movies.interface';
 
 
 @Injectable({
@@ -9,12 +11,43 @@ import { StarShips } from '../interfaces/ships.interface';
 })
 export class ShipsService {
 
-  apiUrl: string = 'https://swapi.py4e.com/api/starships/'
 
-  constructor( private http: HttpClient ) { }
+  apiUrl: string = 'https://swapi.py4e.com/api';
+  id: string = "";
 
-  getShips() {
-    return this.http.get<StarShips>(this.apiUrl)
+  constructor(private http: HttpClient) { }
+
+
+  getShips(page: number) {
+    return this.http.get<StarShips>(`${this.apiUrl}/starships/?page=${page}`);
+  }
+
+  getShipId(id: string) {
+    this.id = id;
+    return this.http.get<Ships>(`${this.apiUrl}/starships/${id}`);
+  }
+
+  getPilots(id:string | undefined){
+      return this.http.get<Pilot>(`${id}`); 
+  }
+  
+  getFilms(id:string | undefined){
+      return this.http.get<Film>(`${id}`);
+  }
+
+  cutId(ships : Ships) :string | undefined {
+    let reg = /['0-9']/ig
+    ships.id =  ships.url.slice(ships.url.length - 4, ships.url.length -1).match(reg)?.join('');
+    return ships.id
+  }
+
+  setId(ships: StarShips) {
+    ships.results.map(ship => {
+      let reg = /['0-9']/ig;
+      let result = ship.url.slice(ship.url.length - 4, ship.url.length - 1).match(reg)?.join('')
+      ship.id = result
+    })
+    return ships.results
   }
 
   

@@ -1,0 +1,73 @@
+<div class="container text-center mt-5 back" *ngIf="!ships; else information">
+
+  <div class="spinner-grow text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+</div>
+
+<ng-template #information>
+ 
+  <div class="d-flex justify-content-center my-5 pb-5" >
+
+  <div class="card mx-3 general " >
+
+    <div class="row g-0">
+
+      <div class="col-12 col-md-7">
+
+        <img class="img-fluid imagen" 
+             [src]="imageUrl | imagenes: ships.id"
+             onerror="this.src='./assets/babyyoda.gif'"
+             style="height: 100% ;">   
+        </div>
+
+      <div class=" col col-md-5 ">
+
+        <div class="card-body container textBox h-100">
+
+          <h5 class="card-title mb-4">{{ ships.name }}</h5>
+         <span>Model:</span>
+         <p class="card-text">{{ ships.model }}</p>
+         <span>Manufacturer:</span>
+         <p class="card-text">{{ ships.manufacturer }}</p>
+         <p class="card-text">Pasengers: {{ ships.passengers }}</p>
+         <span>Starship Class: </span>
+         <p class="card-text">{{ ships.starship_class }}</p>
+    
+<div class="row">
+
+  <div class="justify-content-start mb-3 pilots">
+    
+    <div>
+      <a class="linkTarget mt-1 "  
+         [routerLink]="this.idUrlPilots"
+         *ngIf="pilots" >Pilots</a>
+
+    </div>
+   
+    <div>
+
+      <a class="linkTarget mt-1"  
+            [routerLink]="this.idUrlFilms"
+            *ngIf="films" >Films</a>
+         
+    </div>
+   </div>
+
+  <div> 
+      <a class="linkTarget mt-1" 
+         routerLink="./ships/listado">Back to Star Ships</a>
+         
+    </div> 
+
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+</ng-template>

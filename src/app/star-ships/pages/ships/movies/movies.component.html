@@ -1,0 +1,49 @@
+<div class="container text-center mt-5 back" *ngIf="!film; else information">
+
+  <div class="spinner-grow text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+</div>
+
+<ng-template #information>
+
+  <div class="d-flex justify-content-center my-5 pb-5 m-auto" *ngFor="let movie of film" style="max-width:1200px ;">
+
+    <div class="card mx-3 general ">
+
+      <div class="row g-3">
+
+        <div class="col-12 col-md-5">
+
+          <img class="img-fluid imagen" [src]="movie.episode_id | movie" onerror="this.src='./assets/babyyoda.gif'">
+        </div>
+
+        <div class=" col col-md-7 ">
+
+          <div class="card-body container textBox h-100" >
+
+            <div class="card-body textBox h-100">
+
+              <h5 class="card-title mb-4"> {{ movie.title    }}</h5>
+              <p class="card-text"> {{ movie.opening_crawl }} </p>
+              <p class="card-text">Director: {{ movie.director }} </p>
+              <p class="card-text">Producer: {{ movie.producer }} </p>
+              <p class="card-text">Release date: {{ movie.release_date }} </p>
+
+              <small>
+                <a class="linkTarget" 
+                [routerLink]="this.urlBack">Back to Star-Ship</a>
+              </small>
+              
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</ng-template>

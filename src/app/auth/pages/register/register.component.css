@@ -1,0 +1,36 @@
+.back {
+    height: 55rem;
+    color: #aaa;
+   
+}
+
+.smallBack {
+    background-color: hsl(0, 0%, 9%);
+    max-width: 35rem;
+}
+
+.submitBut {
+background-color: #484848;
+color: white;
+border-radius: 3px;
+}
+
+.submitBut:hover {
+    background-color: #3f6dac;
+}
+
+input {
+    border-radius: 3px;
+}
+
+h3{
+font-size: 1.25rem;
+color: #edd700;
+font-family: "HelveticaNeue-Light";
+letter-spacing: 3px;
+
+}
+
+a{
+    color: #edd700;
+}

@@ -5,19 +5,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './shared/main-page/main-page.component';
+
+
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+
+import { HomeComponent } from './home/home/home.component';
+import { SharedModule } from './shared/shared.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent,
+    HomeComponent,
+  
+   
+   
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule,
+    SharedModule
+
+  ],
+  exports:[
+   
+
   ],
   providers: [],
   bootstrap: [AppComponent]
