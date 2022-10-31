@@ -29,7 +29,8 @@ export class PilotsComponent implements OnInit {
           ship.pilots.forEach((id:string) => 
           this.shipsService.getPilots(id)
           .subscribe((pilots : Pilot) => {
-            this.pilots.push(pilots)}))
+            this.pilots.push(pilots)
+           }))
         }
       
       })
@@ -38,8 +39,9 @@ export class PilotsComponent implements OnInit {
       .subscribe( ({ id }) => {
         this.urlBack = `/ships/${id}`})
     
-      
-    
   }
+
+
+
 
 }

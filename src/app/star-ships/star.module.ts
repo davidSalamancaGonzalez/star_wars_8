@@ -12,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PilotsComponent } from './pages/ships/pilots/pilots.component';
 import { MoviesComponent } from './pages/ships/movies/movies.component';
 import { MoviePipe } from './pipes/movie.pipe';
+import { PilotPipe } from './pipes/pilots.pipe';
 
 
 
@@ -23,10 +24,12 @@ import { MoviePipe } from './pipes/movie.pipe';
     ListComponent,
     ShipsComponent,
     HomeComponent,
-    ImagenesPipe,
     PilotsComponent,
     MoviesComponent,
     MoviePipe,
+    ImagenesPipe,
+    PilotPipe
+    
   
   ],
   imports: [

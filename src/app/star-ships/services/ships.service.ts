@@ -41,6 +41,12 @@ export class ShipsService {
     return ships.id
   }
 
+  cutPilotID(url : string):string | undefined{
+    let reg = /['0-9']/ig
+    let result = url.slice(url.length - 4, url.length -1).match(reg)?.join('');
+    return result
+  }
+
   setId(ships: StarShips) {
     ships.results.map(ship => {
       let reg = /['0-9']/ig;

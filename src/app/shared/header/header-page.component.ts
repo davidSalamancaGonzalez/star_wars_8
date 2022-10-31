@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../../star-ships/services/header.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { AuthService } from '../../auth/services/auth.service';
 import { Auth } from 'src/app/auth/interfaces/auth.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-page',
@@ -16,12 +16,12 @@ export class HeaderPageComponent implements OnInit {
   
   constructor( private headerService:HeaderService,
                public breakpointObserver: BreakpointObserver,
-               private authService: AuthService) { }
+               private router: Router) { }
   
   logos: any;
   
    get auth() {
-    return this.authService.user;
+     return localStorage.getItem("name"); 
   }
 
   ngOnInit(): void {
@@ -39,6 +39,11 @@ export class HeaderPageComponent implements OnInit {
   
   update(result:any){
     this.showContainer = result.matches;
+  }
+
+  logOut(){
+    localStorage.clear()
+    this.router.navigate(['/main'])
   }
   
   }

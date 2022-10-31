@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { catchError } from 'rxjs';
 
 
 @Component({
@@ -43,9 +44,8 @@ export class RegisterComponent implements OnInit {
     .subscribe(resp => {
       console.log("respuesta", resp);
     })
+   
     this.registerForm.reset()
-
-    // TODO create modal with correct register
     this.router.navigate(["/main"])
   }
 

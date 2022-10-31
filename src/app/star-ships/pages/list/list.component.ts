@@ -33,7 +33,9 @@ onScroll():void{
   this.shipsService
     .getShips(this.page+=1)
     .subscribe( data => {
-      this.ships.push(...this.shipsService.setId(data));   
+      if(this.page < 5){
+        this.ships.push(...this.shipsService.setId(data));   
+      }
     })
 }
 
