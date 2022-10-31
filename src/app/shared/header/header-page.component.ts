@@ -34,7 +34,6 @@ export class HeaderPageComponent implements OnInit {
     isSmallScreen.subscribe(result => {
       this.update(result)
     })
- 
   }
   
   update(result:any){
