@@ -63,6 +63,15 @@ ul {
     border-right: 1px solid rgba(85, 85, 85, 0.604);
 }
 
+.logout {
+    color: rgb(228, 228, 228);
+    cursor: pointer;
+}
+
+.logoutLeft{
+    color:#9e4f60;
+    cursor: pointer;
+}
 /* login */
 
 .loginDiv {
@@ -79,7 +88,7 @@ ul {
 
 .linesText {
     display: inline-block;
-    color:#343434;
+    color:#4f4e4e;
     font-size: 1em;
 }
 

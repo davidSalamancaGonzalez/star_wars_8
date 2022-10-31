@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { tap, Observable, map, of } from 'rxjs';
+import { tap, Observable, map, of, catchError } from 'rxjs';
 
 import { Auth, AuthResponse } from '../interfaces/auth.interface';
 
@@ -40,16 +40,16 @@ authVer():Observable<boolean> {
 login(email:string, password:string){
 
 const url = `${this.baseUrl}login`
+
 const body = {email , password}
 
   return  this.http.post<AuthResponse>(url, body)
   .pipe(
     tap( auth => this._user = auth.user),
     tap( auth => localStorage.setItem('token', auth.user.id) ),
-    map( resp => resp)
-  )
-
-
+    tap( auth => localStorage.setItem('name', auth.user.first_name) ),
+    )
+  
 }
 
 // INSERT USER ON DB.JSON

@@ -15,7 +15,7 @@
 .imagen {
     border-top-left-radius: 3% 3%;
     border-top-right-radius: 3% 3%;
-    border-bottom: 2px solid #ba6b7c ;
+    border-bottom: 3px solid #ba6b7c ;
     width: 100%;
     object-fit: cover;
     
@@ -51,7 +51,7 @@
         border-top-right-radius: 0% 0%;
         border-bottom-left-radius:  5px 5px;
         border-bottom: none ;
-        border-right: 2px solid #ba6b7c ;
+        border-right: 3px solid #ba6b7c ;
        
         
     }

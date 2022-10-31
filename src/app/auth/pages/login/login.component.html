@@ -1,5 +1,4 @@
-<app-header-page>  </app-header-page>
-
+<app-header-page> </app-header-page>
 
 <div class="container back">
 
@@ -21,13 +20,14 @@
     <div class="mb-3 col-11 m-auto">
     
         <div class="mb-3">
+
             <input type="email" 
                    class="form-control" 
                    id="exampleFormControlInput1" 
                    placeholder="name@starwars.com"
                    formControlName="email">
                    <span class="form-text text-danger mt-0 mb-0"
-                   *ngIf="required('email')">Please enter your first name</span>
+                   *ngIf="required('email')">Please enter a valid email</span>
         </div>
         
         <div class="mb-0">
@@ -38,22 +38,16 @@
                    placeholder="*******"
                    formControlName="password">
                    <span class="form-text text-danger mt-0 mb-0"
-                   *ngIf="required('password')">Please enter your first name</span>
+                   *ngIf="required('password')">Please enter a valid password</span>
         
         </div>
+
         <button class="btn mt-3 mb-5 col-12 submitBut" type="submit">Continue</button>
     
       </div>
 
-</form>
-
-        
-
-        
-    </div>
-    
+  </form>
+ </div>    
 </div>
-
-
 
 <app-footer></app-footer>

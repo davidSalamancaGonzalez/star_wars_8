@@ -35,13 +35,18 @@
           </div>
           
           <div class="offcanvas-body">
-            <p class="fs-4">{{auth.first_name}}</p>
+            <p class="fs-4">{{ auth | titlecase }}</p>
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <p class="textLog sidebar"> 
-                  <a routerLink="/auth/login">LOG IN </a>
-                  <span class="linesText">/ /</span> 
-                  <a routerLink="/auth/register"> SIGN UP</a></p>
+                <div>
+                <p class="textLog sidebar" *ngIf="!auth; else logout"> 
+                    <a routerLink="/auth/login">LOG IN </a>
+                    <span class="linesText">/ /</span> 
+                    <a routerLink="/auth/register"> SIGN UP</a></p>
+                    <ng-template #logout>
+                      <a  class="logoutLeft" (click)="logOut()"> LOG OUT</a>
+                     </ng-template>
+                  </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link" 
@@ -99,11 +104,21 @@
             <!-- column login -->
             <div class="col align-self-center mt-4 me-3 linesText ">
                 <div class="text-end">
-                  <p class="textLog"> 
-                      <a routerLink="/auth/login">LOG IN </a>
-                      <span class="linesText">/ /</span> 
-                      <a routerLink="/auth/register"> SIGN UP</a></p>
-                      <p *ngIf="auth.first_name != undefined ">Hello: {{auth.first_name}}</p>
+                  
+                  <div>
+                  
+                    <p class="textLog" *ngIf="!auth; else logout">     
+                    <a routerLink="/auth/login">LOG IN </a>
+                    <span class="linesText">/ /</span> 
+                    <a routerLink="/auth/register"> SIGN UP</a></p>
+
+                  </div>
+                    
+                  <ng-template #logout>
+                      <a  class="logout" (click)="logOut()"> LOG OUT</a>
+                     </ng-template>
+                     
+                     <p *ngIf="auth!= undefined ">Hello: {{auth | titlecase}}</p>
                 </div>
             </div>
     

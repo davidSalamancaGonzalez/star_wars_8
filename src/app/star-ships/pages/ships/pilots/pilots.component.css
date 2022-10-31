@@ -38,7 +38,7 @@
     color: #ba6b7c;
 }
 
-@media (min-width: 768px ){
+@media (min-width: 576px ){
     .general {
         border-top-left-radius: 5px 5px;
         border-top-right-radius: 5px 5px;
