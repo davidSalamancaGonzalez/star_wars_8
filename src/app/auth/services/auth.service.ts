@@ -32,8 +32,7 @@ authVer():Observable<boolean> {
     map ( auth => {
       this._user = auth
       return true
-    }) 
-  )
+    }))
 }
 
 
@@ -48,8 +47,7 @@ const body = {email , password}
     tap( auth => this._user = auth.user),
     tap( auth => localStorage.setItem('token', auth.user.id) ),
     tap( auth => localStorage.setItem('name', auth.user.first_name) ),
-    )
-  
+    )  
 }
 
 // INSERT USER ON DB.JSON

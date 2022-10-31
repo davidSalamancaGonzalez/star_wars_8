@@ -24,10 +24,10 @@ export class RegisterComponent implements OnInit {
 
 
   registerForm: FormGroup = this.fb.group({
-    first_name   : ['', [ Validators.required, Validators.minLength(3), Validators.pattern(this.name) ] ],
-    last_name    : ['', [ Validators.required, Validators.min(2), Validators.pattern(this.name) ] ],
-        email    : ['', [ Validators.required, Validators.pattern(this.emailPattern)  ] ],
-        password : ['', [ Validators.required ]]
+    first_name : ['', [ Validators.required, Validators.minLength(3), Validators.pattern(this.name) ] ],
+    last_name  : ['', [ Validators.required, Validators.min(2), Validators.pattern(this.name) ] ],
+    email      : ['', [ Validators.required, Validators.pattern(this.emailPattern)  ] ],
+    password   : ['', [ Validators.required ]]
   })
 
   required( field : string){
@@ -42,9 +42,9 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerForm.value);
     this.AuthService.insertUser(this.registerForm.value)
     .subscribe(resp => {
-      console.log("respuesta", resp);
+      console.log("respuesta", resp)
     })
-   
+    
     this.registerForm.reset()
     this.router.navigate(["/main"])
   }

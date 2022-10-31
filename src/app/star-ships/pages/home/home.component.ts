@@ -26,9 +26,7 @@ export class HomeComponent implements OnInit {
     
     isSmallScreen.subscribe(result => {
       this.update(result)
-    })
- 
-  }
+    })}
   
   update(result:any){
     this.showContainer = result.matches;
