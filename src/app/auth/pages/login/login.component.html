@@ -11,6 +11,8 @@
 
         <div class="row text-center mt-3 text">
          <h3>ENTER YOUR EMAIL & PASSWORD</h3>
+         <span class="form-text text-danger mt-0 mb-1 "
+        *ngIf="this.error">{{this.error}}</span>
         </div>
 
 <!-- FORM LOGIN -->
@@ -28,6 +30,7 @@
                    formControlName="email">
                    <span class="form-text text-danger mt-0 mb-0"
                    *ngIf="required('email')">Please enter a valid email</span>
+                   
         </div>
         
         <div class="mb-0">
@@ -39,15 +42,19 @@
                    formControlName="password">
                    <span class="form-text text-danger mt-0 mb-0"
                    *ngIf="required('password')">Please enter a valid password</span>
+                   
         
         </div>
 
         <button class="btn mt-3 mb-5 col-12 submitBut" type="submit">Continue</button>
-    
-      </div>
+        
+        
+    </div>
 
-  </form>
+  </form>  
  </div>    
 </div>
+
+
 
 <app-footer></app-footer>

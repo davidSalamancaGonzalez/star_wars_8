@@ -8,6 +8,7 @@ export interface Auth {
 }
 
 export interface AuthResponse {
+
     accesToken?: string, 
     user : {
         id        : string,

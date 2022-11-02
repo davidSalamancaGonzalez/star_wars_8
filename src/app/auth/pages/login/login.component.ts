@@ -22,11 +22,14 @@ error:string = "";
   emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
   loginForm: FormGroup = this.fb.group({
-    email: ['tres@gmail.com', [Validators.required, Validators.pattern(this.emailPattern)]],
+    email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
     password: ['', [Validators.required]]
   })
 
   required(field: string) {
+    if(this.error != ''){
+      return 
+    }
     return this.loginForm.controls[field].errors && this.loginForm.controls[field].touched
   }
 
@@ -38,8 +41,8 @@ error:string = "";
 
       this.authService.login(email , password)
       .subscribe(resp  => {
-        if(resp.user.id != undefined){
-          this.loginForm.markAllAsTouched()
+        if(resp != undefined){
+          this.error = resp.error
         }
         this.router.navigate(['/ships/listado']); 
       })

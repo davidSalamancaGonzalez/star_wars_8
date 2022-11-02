@@ -44,10 +44,13 @@ const body = {email , password}
 
   return  this.http.post<AuthResponse>(url, body)
   .pipe(
-    tap( auth => this._user = auth.user),
-    tap( auth => localStorage.setItem('token', auth.user.id) ),
-    tap( auth => localStorage.setItem('name', auth.user.first_name) ),
-    )  
+    tap( auth => {this._user = auth.user}),
+    tap( auth => localStorage.setItem('token', auth.user.id)),
+    tap( auth => localStorage.setItem('name', auth.user.first_name)),
+    catchError(err => of(err))
+    ) 
+  
+    
 }
 
 // INSERT USER ON DB.JSON

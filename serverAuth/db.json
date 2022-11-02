@@ -27,6 +27,13 @@
       "first_name": "Jesús",
       "last_name": "tres",
       "id": 4
+    },
+    {
+      "email": "email@emailss.com",
+      "password": "$2a$10$/YQqITH/sdZlnDW87Co8POidDsklg437eFvrIfA1Q9Yc8ktRx2mCS",
+      "first_name": "jordi",
+      "last_name": "jordi",
+      "id": 5
     }
   ]
 }
