@@ -34,6 +34,20 @@
       "first_name": "jordi",
       "last_name": "jordi",
       "id": 5
+    },
+    {
+      "email": "iit@gmail.com",
+      "password": "$2a$10$/OsJ3V2BiX09DmzS1lc0gO0IIWiW4PFQ4itw3gjIFhfseOdvWptVe",
+      "first_name": "dIVD",
+      "last_name": "DAVID",
+      "id": 6
+    },
+    {
+      "email": "joem@gmail.com",
+      "password": "$2a$10$J3W8yrT8q0vrx450oKJ4dunuGi5R/8Ly.WrJVTXm63PqFLt8PuYI.",
+      "first_name": "home",
+      "last_name": "homeee",
+      "id": 7
     }
   ]
 }
