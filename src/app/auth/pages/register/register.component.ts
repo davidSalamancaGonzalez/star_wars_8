@@ -40,13 +40,13 @@ export class RegisterComponent implements OnInit {
       return;
     }
     console.log(this.registerForm.value);
-    this.AuthService.insertUser(this.registerForm.value)
+    this.AuthService.register(this.registerForm.value)
     .subscribe(resp => {
       console.log("respuesta", resp)
     })
     
     this.registerForm.reset()
-    this.router.navigate(["/main"])
+    this.router.navigate(["/auth/login"])
   }
 
 }
