@@ -55,7 +55,7 @@ const body = {email , password}
 
 // INSERT USER ON DB.JSON
 
-insertUser( user : Auth ): Observable<Auth>{
+register( user : Auth ): Observable<Auth>{
 return this.http.post<Auth>(`${this.baseUrl}users`, user)
 }
 
